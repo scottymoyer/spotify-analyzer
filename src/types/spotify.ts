@@ -71,3 +71,22 @@ export type SpotifyTokenResponse = {
   token_type: string;
   expires_in: number;
 };
+
+/**
+ * Audio feature metric keys for analysis
+ */
+export type MetricKey = "energy" | "tempo" | "valence";
+
+/**
+ * Combined track and audio features for analysis
+ */
+export type AnalyzedTrack = TrackLite & AudioFeaturesLite;
+
+/**
+ * Analysis result containing tracks sorted by different metrics
+ */
+export type AnalysisResult = {
+  energySorted: AnalyzedTrack[];
+  tempoSorted: AnalyzedTrack[];
+  valenceSorted: AnalyzedTrack[];
+};
